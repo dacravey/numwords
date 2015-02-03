@@ -1,6 +1,13 @@
-require("bundler/setup")
-Bundler.require(:default)
-Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
+require('sinatra')
+require('sinatra/reloader')
+also_reload('lib/**/*.rb')
+require('./lib/numword')
 
 get('/') do
+  erb(:form)
+end
+
+get('/results') do
+  @number = params.fetch('number')
+  erb(:results)
 end
