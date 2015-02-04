@@ -1,13 +1,20 @@
 class Fixnum
   def numword
-    words_hash = { 0 => "zero", 1 => "one", 2 => "two", 3 => "three", 4 => "four", 5 => "five", 6=> "six", 7 => "seven", 8 => "eight", 9 =>"nine"
-    }
+    number = self.to_i
+    words_hash = {9 => "nine",8 => "eight",7 => "seven",
+                6 => "six",5 => "five",4 => "four",3 => "three",2 => "two", 1 => "one"   }
 
-    number = self
-
-    if words_hash.has_key?(number)
-      number = words_hash[number]
+    converted_nums = []
+      0.upto(number) do
+      words_hash.each do |num, word|
+        if number >= num
+          converted_nums.push(word)
+          number -= num
+          break
+        end
+      end
     end
-    number
+    converted_words = converted_nums.join(" ")
+    converted_words
   end
 end
