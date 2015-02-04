@@ -1,6 +1,6 @@
 class Fixnum
   def numword
-    number = self.to_i
+    number = self
     words_hash = { 900 => "nine hundred",800 => "eight hundred",700 => "seven hundred",
                 600 => "six hundred",500 => "five hundred",400 => "four hundred",
                 300 => "three hundred",200 => "two hundred",100 => "one hundred",

@@ -9,6 +9,6 @@ get('/') do
 end
 
 get('/results') do
-  @converted_words = params.fetch('converted_words')
+  @entered_word = params.fetch('entered_word')
   erb(:results)
 end
